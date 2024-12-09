@@ -1,0 +1,333 @@
+1 . You are tasked with writing a Python script to calculate the shipping cost based on the weight of the package.
+# Write your Python code here...
+weight=int(input("Enter Weight"))
+if 0<= weight <100:
+    if weight <2:
+        print("$10")
+    elif 2 <= weight <= 5:
+        print ("$20")
+    else:
+        print("$30")
+else:
+    print("Invalid weight")
+    
+
+2. You are tasked with creating a Python script using "Nested-if" statement that checks the current temperature and provides a weather alert.
+# Write your Python code here...
+temperature=10
+if -50 <= temperature <= 60:
+    if temperature < 0:
+        print("Freezing temperatures. Wear warm clothes.")
+    elif 0 <= temperature <= 20:
+        print("Cool weather. A light jacket is recommended.")
+    else:
+        print("Warm weather. Enjoy the sunshine!")
+else:
+    print("Invalid temperature")
+
+
+3. You are tasked with writing a Python script  using 'If' statement that evaluates a student's grade based on their score.
+Input:
+	* An integer score representing the student's score.
+        * You must use the variable "score" in your implementation.
+
+Output:
+	* Print "A" if the score is 90 or above.
+	* Print "B" if the score is between 80 and 89 (inclusive).
+	* Print "C" if the score is between 70 and 79 (inclusive).
+	* Print "D" for any score below 70.
+        * Print "Invalid score" if score is less than 0 or greater than 100.
+
+# Write your Python code here...
+score=int(input("Enter the score:"))
+if score<0 or score >100:
+    print("Invalid score")
+elif score>=90:
+    print("A")
+elif score>=80:
+    print("B")
+elif score>=70:
+    print("C")
+else:
+    print("D")
+
+
+4.Write a Python program to determine if a given character is a vowel using if statements.
+Input:
+	* A single character variable char, representing the character to check.
+	* You must use the variable char in your implementation.
+Output:
+	* If char is a vowel (either uppercase or lowercase), print "Vowel".
+	* If char is not a vowel, print "Not Vowel".
+
+# Write your Python code here...
+char= input("Enter a character")
+if char.lower() in ['a','e','i','o','u']:
+    print("Vowel")
+else:
+    print("Not Vowel")
+
+5. Write a Python function to determine the quadrant of a point (x, y) in the Cartesian plane.
+Input:
+	* Two integer values x and y representing the coordinates of a point on the Cartesian plane.
+	* You must use the variables x and y in your implementation.
+Output:
+	* A string indicating the quadrant of the point:
+	* "Quadrant 1" if (x, y) is in the first quadrant (both x and y are positive).
+	* "Quadrant 2" if (x, y) is in the second quadrant (x is negative, y is positive).
+	* "Quadrant 3" if (x, y) is in the third quadrant (both x and y are negative).
+	* "Quadrant 4" if (x, y) is in the fourth quadrant (x is positive, y is negative).
+	* "Origin" if both x and y are zero.
+        * "Invalid Input" if x and y are not in range (-10,000 and 10,000) exclusive.
+Constraints:
+	* "x" and "y" should be a integer.
+
+def determine_quadrant(x, y):
+    # WRITE YOUR CODE HERE...
+    if  -10000<x<10000 and -10000<y<10000:
+        if x>0 and y>0:
+            return "Quadrant 1"
+        elif x<0 and y>0:
+            return "Quadrant 2"
+        elif x<0 and y<0:
+            return "Quadrant 3"
+        elif x>0 and y<0:
+            return "Quadrant 4"
+        elif x==0 and y==0:
+            return "Origin"
+    else:
+        return "Invalid Input"
+x = 3
+y = 45425654
+print(determine_quadrant(x,y))
+
+6. You are tasked with writing a Python function to calculate the final price after applying a discount based on the total purchase amount.
+Input:
+	* A float price representing the total purchase amount (0 < price ≤ 10,000).
+	* You must use the variable "price" in your implementation.
+Output:
+	* Print a string representing the final price after applying the discount, rounded to two decimal places, formatted as "$X.XX" where X.XX is the final price.
+        * Discount Rules:
+	    If the price is greater than or equal to $100, apply a 10% discount.
+	    If the price is less than $100, apply a 5% discount.
+	    If the price is -ve or greater than $10000, print a "Invalid Price".
+Constraint:
+        * The input price should be a number.
+
+# Write your Python code here...
+price=float(input("Enter the price:"))
+if 0< price <=10000:
+    if price>=100:
+        discount=0.10
+    else:
+        discount=0.05
+    final =price-(price*discount)
+    print(f"${final:.2f}")
+else:
+    print("Invalid Price")
+
+7. You are tasked with writing a Python program to verify user login credentials.
+Input:
+	* A string username representing the username (required).
+	* A string password representing the password (required).
+	* You must use the variable "username" and "password" in your implementation.
+Output:
+	* If the username is "admin" and the password is "password123", print "Login successful".
+	* If either username or password is missing (empty or None), print "Username and password are required".
+	* For any other username or password, print "Invalid credentials".
+Constraints:
+	* The inputs username and password must be string.
+
+# Write your Python code here...
+username=input("Enter a username")
+password=input("Enter a password")
+if not username or not password:
+    print("Username and password are required")
+elif username=="admin" and password=="password123":
+    print("Login successful")
+else:
+    ("Invalid credentials")
+
+8. Write a Python program to determine if a student is eligible for a scholarship based on their marks.
+
+Input:
+	* An integer marks representing the student's marks.
+	* You must use the variable "marks" in your implementation.
+Output:
+	* If marks is greater than or equal to 90, print "You are eligible for a scholarship".
+	* If marks is less than 90, print "You are not eligible for a scholarship".
+	* If the input marks is outside the range 0 ≤ marks ≤ 100, print "Invalid marks".
+Constraints:
+	* Input marks must be an integer.
+
+# Write your Python code here...
+marks=95
+if 0 < marks <= 100:
+    if marks >= 90:
+        print("You are eligible for a scholarship")
+    else:
+        print("You are not eligible for a scholarship")
+else:
+    print("Invalid marks")
+
+9. Write a Python script to classify a triangle based on the lengths of its three sides. The triangle should be classified as "Equilateral", "Isosceles", or "Scalene" using nested if-else conditions.
+Input:
+	* Three integer values a, b, and c representing the lengths of the triangle's sides.
+	* You must use the variables a, b, and c in your implementation.
+Output:
+	* A string indicating the type of triangle: "Equilateral" if all three sides are equal, "Isosceles" if exactly two sides are equal, and "Scalene" if all sides are different.
+        * Print "Invalid side lengths"  if inputs are not in range (1 <= a, b and c<= 1000)
+        * If the inputs are in range and the triangle cannot be formed then print "Invalid triangle".
+
+# Write your Python code here...
+a=int(input("Enter the length of side a:"))
+b=int(input("Enter the elngth of side b:"))
+c=int(input("Enter the length of side c:"))
+if not(1 <=a <= 1000 and 1<= b<= 1000 and 1 <=c <= 1000):
+    print("Invalid side lengths")
+else:
+    if a+b>c and a+c>b and b+c>a:
+        if a==b and b==c:
+            print("Equilateral")
+        elif a==b or b==c or a==c:
+            print("Isosceles")
+        else:
+            print("Scalene")
+    else:
+        print("Invalid triangle")
+
+10. You are tasked with writing a Python program to determine the movie ticket price based on a person’s age.
+Input:
+	* An integer age representing the person's age. The valid range for age is 0 ≤ age ≤ 120.
+	* You must use the variable "age" in your implementation.
+Output:
+	* Print "$5" if the person is under 12 years old or over 65 years old.
+	* Print "$10" if the person is between 12 and 65 years old (inclusive).
+	* Print "Invalid age" if the input age is outside the valid range of 0 to 120 (inclusive).
+Constraints:
+	* age is an integer.
+
+# Write your Python code here...
+age=int(input("Enter the person's age"))
+if 0 <= age <= 120:
+    if age < 12 or age > 65:
+        print("$5")
+    else:
+        print("$10")
+else:
+    print("Invalid age")
+
+11.You are tasked with creating a Python script to suggest a dress code for an event based on the weather using Nested-if else statements.
+Input:
+	* A string weather representing the weather condition. The valid inputs are: "raining", "sunny" and "other" (for any other weather condition)
+        * You must use the variable "weather" in your implementation.
+Output:
+	* Print "Wear a raincoat." if the weather is "raining".
+	* Print "Wear sunglasses and light clothing." if the weather is "sunny".
+	* Print "Wear something comfortable." for any other weather condition.
+Constraints:
+	* The input for weather must be string.
+
+# Write your Python code here...
+weather=input("Enter the weather condition:")
+if weather=="raining":
+    print("Wear a raincoat.")
+elif weather=="sunny":
+    print("Wear sunglasses and light clothing.")
+else:
+    print("Wear something comfortable.")
+
+12. You are tasked with writing a Python program using "if" statement to determine whether a person is eligible to vote based on their age.
+
+Input:
+	* An integer age representing the person's age. The valid range for age is 0 ≤ age ≤ 120.
+	* You must use the variable age in your implementation.
+Output:
+	* If the person is 18 years or older, print "You can vote".
+	* If the person is under 18 years, print "You cannot vote yet".
+	* If the input age is outside the range 0 ≤ age ≤ 120, print "Invalid age".
+Constraint:
+        * The input age should be a number.
+
+# Write your Python code here...
+age=int(input("Enter Age"))
+if 0 < age < 120:
+    if age >= 18:
+        print("You can vote")
+    else:
+        print("You cannot vote yet")
+else:
+    print("Invalid age")
+
+13. You are tasked with writing a Python program to check if a person is eligible for a credit card.
+Input:
+	* An integer age representing the person’s age. The valid range for age is 0≤ age ≤ 120.
+	* An integer income representing the person’s annual income in dollars.
+	* You must use the variable "age" in your implementation.
+Output:
+	* Print "Eligible for credit card" if the person is at least 21 years old and has an annual income of at least $30,000.
+	* Print "Not eligible for credit card" if either condition is not met.
+        * Print "Invalid age" if age is not in this range  0 ≤ age ≤ 120.
+Constraints:
+	* age is a non-negative integer.
+	* income is a non-negative integer.
+
+# Write your Python code here...
+age=int(input("Enter the age:")).strip()
+income=int(input("Enter the annual income in dollars:")).strip()
+if age < 0 or age > 120:
+    print("Invalid age")
+else:
+    if age >= 21 and income >= 30000:
+        print("Eligible for credit card")
+    else:
+        print ("Not eligible for credit card")
+
+14. Write a Python program to determine if a number is divisible by 3, 5, or both using if statements.
+Input:
+	* An integer num representing the number to check for divisibility.
+	* You must use the variable num in your implementation.
+Output:
+	* If the number is divisible by both 3 and 5, print "Divisible by both".
+	* If the number is divisible by only 3, print "Divisible by 3".
+	* If the number is divisible by only 5, print "Divisible by 5".
+	* If the number is not divisible by either 3 or 5, print "Not divisible by 3 or 5".
+        * 0 ≤ num ≤ 1000, If input range fails print "Invalid Number".
+Constraints:
+	* Input num must be a integer.
+
+# Write your Python code here...
+num=int(input("Enter number"))
+if 0 <= num <= 1000:
+    if num%3 == 0 and num%5 ==0:
+        print("Divisible by both")
+    elif num%3 == 0:
+        print("Divisible by 3")
+    elif num%5 == 0:
+        print("Divisible by 5")
+    else:
+        print("Not divisible by 3 or 5")
+else:
+    print("Invalid Number")
+
+15 .Write a Python program to determine if a given shape is a square or a rectangle using if statements.
+Input:
+	* Two integers, length and width, representing the dimensions of the shape.
+	* You must use the variables length and width in your implementation.
+Output:
+	* If length is equal to width, print "Square".
+	* If length is not equal to width, print "Rectangle".
+	* If length or width is outside the range 1 ≤ length, width ≤ 1000, print "Invalid dimensions".
+Constraints:
+	*  Input length and width must be integer.
+
+# Write your Python code here...
+length=5
+width=5
+if 1 <= length <= 1000 and 1 <= width <= 1000:
+    if length == width:
+        print("Square")
+    else:
+        print("Rectangle")
+else:
+    print("Invalid dimensions")
